@@ -1,5 +1,5 @@
-# appinfo
 <per>
+# appinfo
 Script/command to list running services w/ timestamps also helps in identifying the duplicate processes.
      1:  Login to UNIX machine
      2:  sudo to super user
