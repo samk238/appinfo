@@ -1,4 +1,3 @@
-<pre>
 # appinfo
 Script/command to list running services w/ timestamps also helps in identifying the duplicate processes.
      1:  Login to UNIX machine
@@ -11,4 +10,3 @@ Script/command to list running services w/ timestamps also helps in identifying 
      8:  verfiy the result, incase of any misleading output, please update as needed.
      7:  from nextlogin/forthwith type "appinfo" to trigger "~/appinfo.sh"
                -- above can be achieved by removing the "#opt#" comment from script...
-</pre>
