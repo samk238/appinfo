@@ -17,11 +17,11 @@ export check=1
 #opt#chmod 755 ~/appinfo.sh
 #opt#if [[ ! -f ~/.bash_profile ]]; then touch ~/.bash_profile; fi
 #opt#if [[ -z $(echo $SHELL | grep -i bash) ]]; then
-#opt#	if [[ -z $(cat ~/.bash_profile | grep 'alias appinfo="/bin/bash/ ~/appinfo.sh"') ]]; then echo "alias appinfo=\"/bin/bash ~/appinfo.sh\"" >> ~/.bash_profile; echo "\nDONE\n"; else echo -e "\nAlias, already exists\n"; fi
+#opt#if [[ -z $(cat ~/.bash_profile | grep 'alias appinfo="/bin/bash/ ~/appinfo.sh"') ]]; then echo "alias appinfo=\"/bin/bash ~/appinfo.sh\"" >> ~/.bash_profile; echo "\nDONE\n"; else echo -e "\nAlias, already exists\n"; fi
 #opt#else
-#opt#	if [[ -z $(cat ~/.bash_profile | grep 'alias appinfo=". ~/appinfo.sh"') ]]; then echo "alias appinfo=\". ~/appinfo.sh\"" >> ~/.bash_profile; echo -e "\nDONE\n";else echo -e "\nAlias, already exists\n"; fi
+#opt#if [[ -z $(cat ~/.bash_profile | grep 'alias appinfo=". ~/appinfo.sh"') ]]; then echo "alias appinfo=\". ~/appinfo.sh\"" >> ~/.bash_profile; echo -e "\nDONE\n";else echo -e "\nAlias, already exists\n"; fi
 #opt#fi
-#opt#.  ~/.bash_profile
+#opt#. ~/.bash_profile
 
 cd ~
 echo -e "${BOLD}$(pwd)${ESC}"
@@ -113,8 +113,8 @@ if [[ $TOT_PROC -ge 1 ]]; then
       JAR=$(echo $i | tr ' ' '\n' | grep "\.jar" | grep -v "javaagent" | grep -v ^$ | awk '{$1=$1;print}' | uniq | tr '\n' ' ')
       PROC=$(echo -e "${CONF} ${JAR}" | awk '{$1=$1;print}')
       if [[ $(echo $i | grep -i "stub.serviceinvocations.enabled=true") ]]; then
-      	 PROC=$(echo -e "stub.service: ${JAR}" | awk '{$1=$1;print}')
-      fi	
+        PROC=$(echo -e "stub.service: ${JAR}" | awk '{$1=$1;print}')
+      fi
           
     elif [[ ! -z $(echo $i | grep -i "httpd.conf") ]]; then
       APPNM $i; TIMEE $i
